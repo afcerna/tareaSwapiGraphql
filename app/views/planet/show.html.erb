@@ -1,0 +1,57 @@
+<p>
+  <strong>Name:</strong>
+  <%= @planet.name %>
+</p>
+
+<p>
+  <strong>Rotation period:</strong>
+  <%= @planet.rotation_period %>
+</p>
+
+<p>
+  <strong>Orbital period:</strong>
+  <%= @planet.orbital_period %>
+</p>
+
+<p>
+  <strong>Diameter:</strong>
+  <%= @planet.diameter %>
+</p>
+
+<p>
+  <strong>Gravity:</strong>
+  <%= @planet.gravity %>
+</p>
+
+<p>
+  <strong>Terrain:</strong>
+  <%= @planet.terrains %>
+</p>
+
+<p>
+  <strong>Surface water:</strong>
+  <%= @planet.surface_water %>
+</p>
+
+<p>
+  <strong>Population:</strong>
+  <%= @planet.population %>
+</p>
+
+<p>
+  <strong>Residents:</strong>
+  <% @planet.resident_connection.residents.each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_person_path(id: p.id) %></td>
+  </tr>
+  <% end %>
+
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <% @planet.film_connection.films.each do |f| %>
+  <tr>
+    <td><%= link_to f.title, show_film_path(id: f.id) %></td>
+  </tr>
+<% end %>

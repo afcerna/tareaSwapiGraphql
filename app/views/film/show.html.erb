@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @film.title %>
+</p>
+
+<p>
+  <strong>Episode:</strong>
+  <%= @film.episode_id %>
+</p>
+
+<p>
+  <strong>Opening crawl:</strong>
+  <%= @film.opening_crawl %>
+</p>
+
+<p>
+  <strong>Director:</strong>
+  <%= @film.director %>
+</p>
+
+<p>
+  <strong>Producers:</strong>
+  <%= @film.producers %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @film.release_date %>
+</p>
+
+<p>
+  <strong>Characters:</strong>
+  <% @film.character_connection.characters.each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_person_path(id: p.id) %></td>
+  </tr>
+  <% end %>
+</p>
+<p>
+  <strong>Planets:</strong>
+  <% @film.planet_connection.planets.each do |p| %>
+  <tr>
+    <td><%= link_to p.name, show_planet_path(id: p.id) %></td>
+
+  </tr>
+  <% end %>
+</p>
+
+<p>
+  <strong>Starships:</strong>
+  <% @film.starship_connection.starships.each do |s| %>
+  <tr>
+    <td><%= link_to s.name, show_starship_path(id: s.id) %></td>
+
+  </tr>
+  <% end %>
+</p>

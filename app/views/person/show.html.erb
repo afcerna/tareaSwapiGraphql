@@ -1,0 +1,65 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @person.height %>
+</p>
+
+<p>
+  <strong>Mass:</strong>
+  <%= @person.mass %>
+</p>
+
+<p>
+  <strong>Hair color:</strong>
+  <%= @person.hair_color %>
+</p>
+
+<p>
+  <strong>Skin color:</strong>
+  <%= @person.skin_color %>
+</p>
+
+<p>
+  <strong>Eye color:</strong>
+  <%= @person.eye_color %>
+</p>
+
+<p>
+  <strong>Birth year:</strong>
+  <%= @person.birth_year %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @person.gender %>
+</p>
+
+<p>
+  <strong>Homeworld:</strong>
+  <%= @person.homeworld.name %>
+</p>
+
+<p>
+  <strong>Films:</strong>
+  <% @person.film_connection.films.each do |p| %>
+  <tr>
+    <td><%= link_to p.title, show_film_path(id: p.id) %></td>
+  </tr>
+  <% end %>
+
+</p>
+
+<p>
+  <strong>Starships:</strong>
+  <% @person.starship_connection.starships.each do |s| %>
+  <tr>
+    <td><%= link_to s.name, show_starship_path(id: s.id) %></td>
+  </tr>
+  <% end %>
+
+</p>
